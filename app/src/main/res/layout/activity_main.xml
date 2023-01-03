@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.duoduo.demo.MainActivity">
 
-    <ScrollView
+    <HorizontalScrollView
         android:id="@+id/buttonBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,19 +27,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="write object1" />
+                android:text="写入对象到文件" />
 
             <Button
                 android:id="@+id/readObj1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="read object1" />
+                android:text="从文件读取对象" />
+
+            <Button
+                android:id="@+id/writeList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="写入集合对象" />
+
+            <Button
+                android:id="@+id/readList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="读取集合对象" />
+
+            <Button
+                android:id="@+id/deleteFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="删除数据文件" />
+
+
+            <Button
+                android:id="@+id/waitFinish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="等待写入完成" />
 
         </LinearLayout>
 
 
-    </ScrollView>
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/readContent"

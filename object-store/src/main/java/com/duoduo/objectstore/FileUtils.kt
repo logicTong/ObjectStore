@@ -54,6 +54,9 @@ object FileUtils {
 
 
     fun readFromFile(file: File): Any? {
+        if (!file.exists()) {
+            return null
+        }
         var inStream: BufferedInputStream? = null
         try {
             inStream = BufferedInputStream(FileInputStream(file))
