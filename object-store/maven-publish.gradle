@@ -2,12 +2,20 @@ def archive = [
         "MAVEN_PATH" : "..",
         "GROUP_ID"   : "com.duoduo.mydaughter",
         "ARTIFACT_ID": "object-store",
-        "VERSION"    : "1.0.2",
+        "VERSION"    : "1.0.3",
 ]
 
 task androidSourcesJar(type: Jar) {
-    classifier('sources')
-    from android.sourceSets.main.java.srcDirs
+    println project
+    println "project =${project.getProperties()}"
+    if (project.hasProperty("kotlin")){
+        from android.sourceSets.main.java.srcDirs
+    }else if(project.hasProperty("android")){
+        from android.sourceSets.main.java.sourceFiles
+    }else {
+        from sourceSets.main.allSource
+    }
+    classifier='sources'
 }
 
 artifacts {

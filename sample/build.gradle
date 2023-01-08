@@ -53,7 +53,7 @@ dependencies {
     if (compileSource) {
         implementation project(':object-store')
     } else {
-        implementation 'com.duoduo.mydaughter:object-store:1.0.2'
+        implementation 'com.duoduo.mydaughter:object-store:1.0.3'
     }
 
 
