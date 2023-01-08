@@ -2,15 +2,16 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace 'com.duoduo.objectstore'
-    compileSdk 32
+    compileSdkVersion 31
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
-        minSdk 19
-        targetSdk 32
+        minSdkVersion 19
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
     }
+
 
     buildTypes {
         release {
@@ -31,3 +32,4 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.lifecycle:lifecycle-livedata:2.0.0'
 }
+
