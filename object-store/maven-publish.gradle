@@ -1,0 +1,28 @@
+def archive = [
+        "MAVEN_PATH" : "..",
+        "GROUP_ID"   : "com.duoduo.mydaughter",
+        "ARTIFACT_ID": "object-store",
+        "VERSION"    : "1.0.0",
+]
+
+task androidSourcesJar(type: Jar) {
+    classifier('sources')
+    from android.sourceSets.main.java.srcDirs
+}
+
+artifacts {
+    archives androidSourcesJar
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        def mavenLib = file(archive.MAVEN_PATH)
+        repository(url: "file://${mavenLib.absolutePath}")
+
+        pom.project {
+            version archive.VERSION
+            groupId archive.GROUP_ID
+            artifactId archive.ARTIFACT_ID
+        }
+    }
+}

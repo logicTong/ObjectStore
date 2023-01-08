@@ -17,7 +17,9 @@ class MainActivity : AppCompatActivity() {
     private val waitFinish: Button by lazy { findViewById(R.id.waitFinish) }
 
 
-    private val objStore: ObjectStore<TestObj> by lazy { ObjectStore(this, "testObj") }
+    private val objStore: ObjectStore<TestObj> by lazy {
+        ObjectStore(this, "testObj")
+    }
     private val listStore: ObjectStore<ArrayList<TestObj>> by lazy {
         ObjectStore(
             this,
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun setListeners() {
+    private fun setListeners() {
         writeObj1.setOnClickListener {
             TestObj(
                 name = "钟华健",
