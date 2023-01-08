@@ -2,7 +2,7 @@ def archive = [
         "MAVEN_PATH" : "..",
         "GROUP_ID"   : "com.duoduo.mydaughter",
         "ARTIFACT_ID": "object-store",
-        "VERSION"    : "1.0.0",
+        "VERSION"    : "1.0.2",
 ]
 
 task androidSourcesJar(type: Jar) {

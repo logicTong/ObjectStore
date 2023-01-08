@@ -19,7 +19,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        debug{
+        debug {
 
         }
     }
@@ -38,7 +38,7 @@ android {
 }
 
 
-def compileSource=true
+def compileSource = false
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -50,10 +50,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
-    if(compileSource) {
+    if (compileSource) {
         implementation project(':object-store')
-    }else {
-        implementation 'com.duoduo.mydaughter:object-store:1.0.0'
+    } else {
+        implementation 'com.duoduo.mydaughter:object-store:1.0.2'
     }
 
 
